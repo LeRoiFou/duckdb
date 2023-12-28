@@ -1,7 +1,8 @@
-# DuckDb
+# Librairie Duckdb
 
-Essai avec la librairie DuckDb qui permet de traiter les gros fichiers avec du SQL.
-Pour effectuer des traitements avec cette libraire, il faut créer un fichier .vscode avec le fichier JSON settings associé.
+Duckdb permet d'effectuer des requêtages SQL pour des gros fichiers (L47 A II LPF)
 
-Date : 24-12-2023
-Éditeur : Laurent Reynaud
+[Présentation de la librairie](https://www.datacamp.com/blog/an-introduction-to-duckdb-what-is-it-and-why-should-you-use-it#rdl)
+
+Date : 28-12-2023
+Éditeur : Laurent REYNAUD
