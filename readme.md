@@ -16,6 +16,12 @@ La sauvegarde peut se faire à partir :
 - d'un [stockage en cloud public](https://www.ipe.fr/stockage-des-donnees-quest-ce-que-le-cloud-prive/) géré par des entreprises comme Amazon (AWS), Microsoft (Azure), Google Cloud Platform, IBM Cloud et Oracle Cloud. Les données sont hébergées sur une multitude de serveurs, auxquels peuvent accéder de nombreux utilisateurs. Cela ne signifie évidemment pas que les données de l’entreprise sont publiques, mais simplement que l’environnement cloud n’est pas conçu sur mesure pour un client.
 - de disques durs externes : disque dur portable sécurisé à reconnaissance d'empreinte digitale, disque dure avec un chiffrement sur l'accès par MDP...
 
+Il y a principalement 3 types de BD :
+
+* SQLITE : pour traiter sur des petits fichiers ;
+* POSTGRESQL : pour traiter sur des fichiers de taille importante ;
+* MYSQL : pour le partage des données
+
 Date : 28-12-2023
 Éditeur : Laurent REYNAUD
 
@@ -34,7 +40,7 @@ Un test a été effectué avec un fichier .csv de 10 Go :
 Le problème pour Duckdb est l'encodage : il suffit qu'un caractère du type 'ö' soit présent dans le fichier, qu'il ne se charge pas. À cela, actuellement deux solutions sont proposées, compte tenu que les travaux à opérer ne seront pas automatisés :
 
 * Soit charger le fichier .csv dans une BD et effectuer des traitements SQL dessus (voir explications dans le fichier jupyter indexA002)
-* Soit charger le fichier .csv dans une BD et exporter sous un format .csv (voir explications dans le fichier jupyter indexA002
+* Soit charger le fichier .csv dans une BD et exporter sous un format .csv (voir explications dans le fichier jupyter indexA002)
 
 Dans les deux cas, un test a été réalisés avec le fichier .csv de 10 Go :
 
@@ -50,3 +56,12 @@ Dans les deux cas, un test a été réalisés avec le fichier .csv de 10 Go :
 Date : 08-01-2024
 
 Éditeur : Laurent Reynaud
+
+---
+
+Désignation des index :
+
+> * index00... : introduction sur duckdb
+> * indexA0... : test sur duckb
+> * indexB0... : cours sur le site [SQL TUTORIAL](https://www.w3schools.com/sql/default.asp)
+> * indexC0... : test sur les FEC
