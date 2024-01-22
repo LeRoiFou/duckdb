@@ -53,6 +53,12 @@ Dans les deux cas, un test a été réalisés avec le fichier .csv de 10 Go :
 2. Si le fichier est important, travailler sur le terminal de duckdb
 3. et à défaut de chargement, importer le fichier .csv dans une BD
 
+Concernant les opérations de fusion, de concaténation, avec la fonction sqlite_scan(), il n'est pas possible de travailler sur plusieurs tables présentes dans une base de données. Dans ce cas, travailler directement sur du SQL et pour exporter sous format .csv les requêtes opérées sur les tables, dans la fenêtre d'affichage de la table SQLite, cliquer sur l'icône "Export CSV"
+
+
+![](assets/20240122_100412_image.png)
+
+
 Date : 08-01-2024
 
 Éditeur : Laurent Reynaud
