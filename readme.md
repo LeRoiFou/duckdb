@@ -4,7 +4,7 @@ Duckdb permet d'effectuer des requêtages SQL pour des gros fichiers (L47 A II L
 
 [Présentation de la librairie](https://www.datacamp.com/blog/an-introduction-to-duckdb-what-is-it-and-why-should-you-use-it#rdl)
 
-Cette librairie permet d'effectuer des fonctiosn d'agrégation, d'assemblage, de recoupement pour des fichiers importants avant d'effectuer éventuellemment d'autres traitements plus précis avec les librairies pandas, polars...
+Cette librairie permet d'effectuer des fonctions d'agrégation, d'assemblage, de recoupement pour des fichiers importants avant d'effectuer éventuellemment d'autres traitements plus précis avec les librairies pandas, polars...
 
 En recourant à cette librairie, on se situe entre le stade de la data engineering et la data scientist.
 Cela nécessite de récupérer des données qui peuvent être sauvegardées dans différents endroits par la société [documentation](https://www.dynamips.com/sauvegarde-de-donnees-quel-type-de-stockage-choisir-pour-votre-entreprise/)
@@ -18,9 +18,9 @@ La sauvegarde peut se faire à partir :
 
 Il y a principalement 3 types de BD :
 
-* SQLITE : pour traiter sur des petits fichiers ;
-* POSTGRESQL : pour traiter sur des fichiers de taille importante ;
-* MYSQL : pour le partage des données
+- SQLITE : pour traiter sur des petits fichiers ;
+- POSTGRESQL : pour traiter sur des fichiers de taille importante ;
+- MYSQL : pour le partage des données
 
 Date : 28-12-2023
 Éditeur : Laurent REYNAUD
@@ -37,15 +37,16 @@ Un test a été effectué avec un fichier .csv de 10 Go :
   - Avec jupysql : le fichier met environ 5 minutes pour se charger
   - Avec le terminal Duckdb : le fichier met environ 2 minutes pour se charger
 
-Le problème pour Duckdb est l'encodage : il suffit qu'un caractère du type 'ö' soit présent dans le fichier, qu'il ne se charge pas. À cela, actuellement deux solutions sont proposées, compte tenu que les travaux à opérer ne seront pas automatisés :
+Le problème pour Duckdb est l'[encodage](https://duckdb.org/docs/data/csv/overview.html) : il suffit qu'un caractère du type 'ö' soit présent dans le fichier, qu'il ne se charge pas. À cela, actuellement deux solutions sont proposées, compte tenu que les travaux à opérer ne seront pas automatisés :
 
-* Soit charger le fichier .csv dans une BD et effectuer des traitements SQL dessus (voir explications dans le fichier jupyter indexA002)
-* Soit charger le fichier .csv dans une BD et exporter sous un format .csv (voir explications dans le fichier jupyter indexA002)
+- Soit charger le fichier .csv dans une BD et effectuer des traitements SQL dessus (voir explications dans le fichier jupyter indexA002)
+- Soit charger le fichier .csv dans une BD et exporter sous un format .csv (voir explications dans le fichier jupyter indexA002)
 
 Dans les deux cas, un test a été réalisés avec le fichier .csv de 10 Go :
 
-* Le chargement du fichier dans la BD a mis moins de 5 minutes
-* L'exportation de la table de la BD dans un fichier .csv a mis environ 5 minutes
+- Le chargement du fichier dans la BD a mis moins de 5 minutes
+- L'exportation de la table de la BD dans un fichier .csv a mis environ 5 minutes avec JupySQL
+- L'exportation de la table de la BD dans un fichier .csv a mis environ 8 minutes avec la fonctionnalité duckdb conn.execute()
 
 **Conclusion :**
 
@@ -55,9 +56,7 @@ Dans les deux cas, un test a été réalisés avec le fichier .csv de 10 Go :
 
 Concernant les opérations de fusion, de concaténation, avec la fonction sqlite_scan(), il n'est pas possible de travailler sur plusieurs tables présentes dans une base de données. Dans ce cas, travailler directement sur du SQL et pour exporter sous format .csv les requêtes opérées sur les tables, dans la fenêtre d'affichage de la table SQLite, cliquer sur l'icône "Export CSV"
 
-
 ![](assets/20240122_100412_image.png)
-
 
 Date : 08-01-2024
 
@@ -65,9 +64,28 @@ Date : 08-01-2024
 
 ---
 
+### Différence de temps de chargement entre les différentes librairies en data science avec un fichier .csv de 680 Mo
+
+- Avec la librairie pandas :
+
+  ![](assets/pandas.png)
+
+- Avec la librairie polars :
+
+  ![](assets/polars.png)
+
+- Avec la librairie duckdb :
+
+  ![](assets/duckdb.png)
+
+---
+
 Désignation des index :
 
-> * index00... : introduction sur duckdb
-> * indexA0... : test sur duckb
-> * indexB0... : cours sur le site [SQL TUTORIAL](https://www.w3schools.com/sql/default.asp)
-> * indexC0... : test sur les FEC
+> - index00... : introduction sur duckdb
+> - indexA0... : test sur duckb
+> - indexB0... : cours sur le site [SQL TUTORIAL](https://www.w3schools.com/sql/default.asp)
+> - indexC0... : test sur les FEC
+> - indexD0... : test sur les fichiers L47AII
+
+---
