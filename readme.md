@@ -87,5 +87,6 @@ Désignation des index :
 > - indexB0... : cours sur le site [SQL TUTORIAL](https://www.w3schools.com/sql/default.asp)
 > - indexC0... : test sur les FEC
 > - indexD0... : test sur les fichiers L47AII
+> - indexE0... : cours SQL avec duckdb
 
 ---
